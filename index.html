@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Meng Tian</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic website of Meng Tian, Ph.D.">
+<title>Meng Tian, Ph.D.</title>
+<style>
+:root{--ink:#17212b;--muted:#5f6b76;--line:#e6e9ed;--accent:#245a86;--soft:#f6f8fa}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+nav{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:5}
+.nav{max-width:1040px;margin:auto;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{font-weight:700;color:var(--ink)} .links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+main{max-width:1040px;margin:auto;padding:58px 24px 90px}
+.hero{display:grid;grid-template-columns:1fr 250px;gap:60px;align-items:center;padding:20px 0 54px}
+h1{font-size:46px;line-height:1.12;margin:0 0 10px;letter-spacing:-1px}
+.subtitle{font-size:20px;color:var(--muted);margin:0 0 18px}
+.contact{color:var(--muted);font-size:15px}.contact span{margin-right:12px}
+.photo{width:230px;height:230px;border-radius:50%;object-fit:cover;background:var(--soft);border:1px solid var(--line)}
+.photo-placeholder{width:230px;height:230px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--soft);border:1px solid var(--line);color:#89939d;font-size:13px;padding:30px}
+section{padding:38px 0;border-top:1px solid var(--line)}
+h2{font-size:27px;margin:0 0 24px} h3{font-size:18px;margin:0 0 4px}
+.lead{font-size:18px;max-width:820px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{padding:20px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.meta{color:var(--muted);font-size:14px;margin:3px 0 9px}
+.pub{margin:0 0 18px}.pub-title{font-weight:600}.journal{font-style:italic}
+.badge{display:inline-block;padding:3px 8px;border-radius:20px;background:var(--soft);font-size:12px;color:var(--muted);margin-left:5px}
+.button{display:inline-block;border:1px solid var(--accent);padding:9px 14px;border-radius:7px;margin:5px 8px 5px 0}
+.small{font-size:13px;color:var(--muted)} footer{border-top:1px solid var(--line);padding:25px 24px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.photo-placeholder,.photo{width:180px;height:180px}.grid{grid-template-columns:1fr}.links{display:none}h1{font-size:38px}}
+</style>
 </head>
 <body>
-  <h1>Meng Tian</h1>
-  <p>Welcome to my personal website.</p>
-</body>
-</html>
+<nav><div class="nav"><a class="brand" href="#">Meng Tian</a><div class="links">
+<a href="#research">Research</a><a href="#education">Education</a><a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#service">Service</a><a href="#cv">CV</a>
+</div></div></nav>
+<main>
+<header class="hero">
+<div>
+<h1>Meng Tian, Ph.D.</h1>
+<p class="subtitle">Drug Delivery · Translational Pharmaceutics · RNA Therapeutics</p>
+<p class="lead">Research focused on clinically translatable pharmaceutical formulations and therapeutic development, including oral, injectable and transdermal delivery systems, physiological-barrier crossing, oligonucleotide therapeutics and mRNA-based therapies.</p>
+<p class="contact">
+<span><a href="mailto:tian.meng@mssm.edu">tian.meng@mssm.edu</a></span>
+<span><a href="https://orcid.org/0000-0001-7719-9896">ORCID</a></span>
+<span>Scopus Author ID: 57222707546</span>
+</p>
+</div>
+<div id="portrait"><div class="photo-placeholder">Add your portrait as<br><strong>profile.jpg</strong></div></div>
+</header>
+
+<section id="research"><h2>Research</h2><div class="grid">
+<div class="card"><h3>Translational Pharmaceutical Formulation Development</h3><p>Design and optimization of clinically translatable oral, injectable and transdermal drug delivery systems, including enhancer-assisted oral absorption of macromolecular therapeutics, conversion of intravenous formulations toward subcutaneous administration, and delivery across physiological barriers.</p></div>
+<div class="card"><h3>Therapeutic Discovery & Development</h3><p>Fundamental and translational therapeutic development emphasizing small molecules, oligonucleotide therapeutics and mRNA-based therapies, with interests spanning autoimmune diseases, cancers, metabolic disorders, drug-induced toxicities and aging-associated diseases.</p></div>
+</div></section>
+
+<section id="education"><h2>Education & Research Experience</h2>
+<div class="card"><h3>Associate Scientist · Icahn School of Medicine at Mount Sinai</h3><p class="meta">Effective September 2026</p><p>Promotion from Postdoctoral Fellow to Associate Scientist.</p></div><br>
+<div class="card"><h3>Postdoctoral Fellow · Icahn School of Medicine at Mount Sinai</h3><p class="meta">2023–Present · New York</p><p>Immunology & Immunotherapy Department, PrIISM Institute. Collaborating PI: Prof. Yizhou Dong. Lipid nanoparticles, mRNA therapeutics, oligonucleotides, oral delivery and drug delivery.</p></div><br>
+<div class="card"><h3>Ph.D. in Biomedical Engineering · Shanghai Jiao Tong University</h3><p class="meta">2018–2023 · Shanghai</p><p>School of Biomedical Engineering and National Facility for Translational Medicine. Mentor: Prof. Shiyi Zhang. Outstanding Graduate; Outstanding Thesis.</p></div><br>
+<div class="card"><h3>Bachelor of Chemical Engineering · Dalian University of Technology</h3><p class="meta">2014–2018 · Dalian</p><p>School of Chemical Engineering and State Key Laboratory of Fine Chemicals. Mentor: Prof. Weihong Qiao. Outstanding Graduate; Outstanding Thesis.</p></div>
+</section>
+
+<section id="publications"><h2>Selected Publications</h2>
+<p class="small">* denotes co-first or co-corresponding authorship, following the CV.</p>
+<div class="pub"><span class="pub-title">Rational Design of Lipid Nanoparticles for Brain Delivery of RNA Therapeutics.</span><br>M. Tian et al. <span class="journal">Nature Nanotechnology</span>. <span class="badge">Revision submitted</span></div>
+<div class="pub"><span class="pub-title">Oral Delivery of Biologics via Potent Permeation Enhancers.</span><br>M. Tian* et al. <span class="journal">Nature Biomedical Engineering</span>. <span class="badge">Revision submitted</span></div>
+<div class="pub"><span class="pub-title">Transporter-mediated Conjugates Transport Antibody to Brain.</span><br>Z. Liu*, M. Tian* et al. <span class="journal">Science Translational Medicine</span>. <span class="badge">Revision submitted</span></div>
+<div class="pub"><span class="pub-title">Anti-inflammation lipid nanoparticles enable localized mRNA therapy for inflammatory bowel disease.</span><br>D. Cao*, M. Tian* et al. <span class="journal">Nature Communications</span>. <span class="badge">Revision submitted</span></div>
+<div class="pub"><span class="pub-title">Selection of GalNAc-Conjugated siKeap1 as Disease-Specific Delivery System for Chemotherapy-Induced Liver Injury and Chronic Liver Disease.</span><br>M. You*, M. Tian* et al. <span class="journal">Nano Letters</span> (2024). <a href="https://doi.org/10.1021/acs.nanolett.3c03609">DOI</a></div>
+<div class="pub"><span class="pub-title">A Transformable Mucoadhesive Microgel Network for Noninvasive Multimodal Imaging And Radioprotection of a Large Area of the Gastrointestinal Tract.</span><br>M. Tian*, X. Mu* et al. <span class="journal">Advanced Materials</span> (2023). <a href="https://doi.org/10.1002/adma.202303436">DOI</a></div>
+<div class="pub"><span class="pub-title">Oral Supramolecular Adsorbent for Preventing Chemo-Induced Gastrointestinal Mucositis and Microbial Dysbiosis and for Enhancing Chemoimmunotherapy.</span><br>M. Tian et al. <span class="journal">Advanced Materials</span> (2022). <a href="https://doi.org/10.1002/adma.202205299">DOI</a></div>
+<div class="pub"><span class="pub-title">A Nano antidote Alleviates Glioblastoma Chemotoxicity without Efficacy Compromise.</span><br>M. Tian*, R. Xing* et al. <span class="journal">Nano Letters</span> (2021). <a href="https://doi.org/10.1021/acs.nanolett.1c01201">DOI</a></div>
+<p><a class="button" href="publications.html">View all publications →</a></p>
+</section>
+
+<section id="awards"><h2>Selected Awards & Honors</h2><div class="grid">
+<div class="card"><h3>NIH TARGETED Genome Editor Delivery Challenge</h3><p class="meta">2025 · Phase IIIa Winner · $90,000 Prize</p></div>
+<div class="card"><h3>NIH TARGETED Genome Editor Delivery Challenge</h3><p class="meta">2025 · Phase II Winner · $250,000 Prize</p></div>
+<div class="card"><h3>Outstanding Doctoral Thesis</h3><p class="meta">2024 · Shanghai Jiao Tong University · Nomination Prize</p></div>
+<div class="card"><h3>Outstanding Graduate</h3><p class="meta">2023 · Shanghai Jiao Tong University</p></div>
+</div></section>
+
+<section id="service"><h2>Academic & Professional Experience</h2>
+<p><strong>Peer review:</strong> Independent reviewer for journals including <em>Angewandte Chemie</em>, <em>Chemical Engineering Journal</em>, <em>Advanced Science</em>, <em>Bioengineering & Translational Medicine</em>, and others.</p>
+<p><strong>Industrial consulting and services:</strong> Experience with OnQuality Pharmaceuticals, PepsiCo, Inc., and Siemens Healthineers.</p>
+<p><strong>Teaching & mentoring:</strong> Mentoring and research training experience at Shanghai Jiao Tong University and Icahn School of Medicine at Mount Sinai.</p>
+</section>
+
+<section id="cv"><h2>Curriculum Vitae</h2>
+<p>A complete CV can be made available directly from this website.</p>
+<a class="button" href="Meng_Tian_CV.pdf">View / Download CV</a>
+</section>
+</main>
+<footer>© 2026 Meng Tian · Hosted with GitHub Pages</footer>
+<script>
+const img=new Image(); img.src="profile.jpg";
+img.onload=()=>{document.getElementById("portrait").innerHTML='<img class="photo" src="profile.jpg" alt="Meng Tian">';};
+</script>
+</body></html>
