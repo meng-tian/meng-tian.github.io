@@ -33,12 +33,12 @@ a:hover{text-decoration:underline}
   backdrop-filter:blur(10px);
 }
 .nav-inner{
-  max-width:1380px;margin:auto;padding:13px 28px;
+  max-width:1580px;margin:auto;padding:13px 28px;
   display:flex;justify-content:space-between;align-items:center;gap:20px;
 }
 .nav-brand{font-weight:750;color:var(--ink)}
 .nav-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
-.site-section{max-width:1380px;margin:auto;padding:54px 28px 70px}
+.site-section{max-width:1580px;margin:auto;padding:54px 28px 70px}
 .site-section + .site-section{border-top:1px solid var(--line)}
 .section-heading{font-size:34px;margin:0 0 30px}
 
@@ -106,13 +106,13 @@ a:hover{text-decoration:underline}
   border:1px solid var(--line);border-radius:14px;overflow:hidden;
   margin:0 0 20px;background:#fff
 }
-.featured-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:0}
+.featured-grid{display:grid;grid-template-columns:minmax(430px,.72fr) minmax(720px,1.28fr);gap:0}
 .copy{padding:30px 32px}
-.figure{min-height:430px;
+.figure{min-height:390px;
   background:#fbfcfe;border-left:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;padding:16px
 }
-.figure img{width:100%;max-height:520px;object-fit:contain;border-radius:8px}
+.figure img{width:100%;max-height:560px;object-fit:contain;border-radius:8px}
 .authors{font-size:15px;color:#394552}
 .journal{font-style:italic;font-weight:700}
 .title{font-weight:700;font-size:17px;margin:6px 0}
@@ -141,7 +141,7 @@ footer{
 }
 @media(max-width:980px){
   .featured-grid{grid-template-columns:1fr}
-  .figure{min-height:430px;border-left:0;border-top:1px solid var(--line)}
+  .figure{min-height:390px;border-left:0;border-top:1px solid var(--line)}
   .figure img{max-height:none}
 }
 @media(max-width:760px){
@@ -224,6 +224,38 @@ details.more-awards li{margin:8px 0}
   .award-grid,.service-grid{grid-template-columns:1fr}
 }
 
+
+.reviewer-card{padding-bottom:24px}
+.reviewer-intro{font-size:14px;color:var(--muted);margin:4px 0 16px}
+.reviewer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.reviewer-item{
+  display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;
+  padding:10px 0;border-top:1px solid var(--line)
+}
+.reviewer-item:nth-child(-n+2){border-top:0}
+.reviewer-num{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  background:#eef5ff;color:var(--blue2);font-size:12px;font-weight:750
+}
+.reviewer-item strong{display:block;font-size:14px;line-height:1.35}
+.reviewer-item span:not(.reviewer-num){display:block;color:var(--muted);font-size:12px;margin-top:2px}
+@media(max-width:760px){
+  .reviewer-grid{grid-template-columns:1fr}
+  .reviewer-item:nth-child(2){border-top:1px solid var(--line)}
+}
+
+
+/* Education & Experience */
+.timeline{display:grid;gap:16px}
+.timeline-item{display:grid;grid-template-columns:118px minmax(0,1fr);gap:24px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:20px 24px;background:#fff}
+.logo-box{height:96px;display:flex;align-items:center;justify-content:center;padding:6px}
+.logo-box img{max-width:100%;max-height:86px;object-fit:contain}
+.timeline-copy h3{font-size:19px;margin:0 0 5px}
+.timeline-meta{font-size:14px;color:var(--muted);font-weight:650;margin-bottom:7px}
+.timeline-detail{font-size:14px;color:#35414d;line-height:1.6;margin:4px 0}
+.timeline-honors{font-size:13px;color:var(--accent);font-weight:650;margin-top:5px}
+@media(max-width:650px){.timeline-item{grid-template-columns:1fr}.logo-box{justify-content:flex-start;height:76px}.logo-box img{max-height:68px;max-width:180px}}
+
 </style>
 </head>
 <body>
@@ -233,6 +265,7 @@ details.more-awards li{margin:8px 0}
     <a class="nav-brand" href="#heading">Meng Tian</a>
     <div class="nav-links">
       <a href="#research">Research</a>
+      <a href="#education">Education & Experience</a>
       <a href="#publications">Publications</a>
       <a href="#awards">Awards</a>
       <a href="#services">Services</a>
@@ -271,7 +304,7 @@ details.more-awards li{margin:8px 0}
   <div class="icon-card"><div class="icon-disc"><img src="assets/research/oligo.png" alt=""></div><strong>Oligonucleotide<br>Therapeutics</strong></div>
   <div class="icon-card"><div class="icon-disc"><img src="assets/research/drug-delivery.png" alt=""></div><strong>Drug<br>Delivery</strong></div>
   <div class="icon-card"><div class="icon-disc"><img src="assets/research/drug-toxicity.png" alt=""></div><strong>Drug<br>Toxicity</strong></div>
-  <div class="icon-card"><div class="icon-disc"><img src="assets/research/pharmaceutics.png" alt=""></div><strong>Pharmaceutics</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/pharmaceutics-new.jpg" alt=""></div><strong>Pharmaceutics</strong></div>
   <div class="icon-card"><div class="icon-disc"><img src="assets/research/biomaterials.jpg" alt=""></div><strong>Biomaterials</strong></div>
 </div>
 
@@ -288,6 +321,51 @@ details.more-awards li{margin:8px 0}
     </article>
   </div>
 </section>
+</section>
+
+
+<section id="education" class="site-section">
+  <h1 class="section-heading">Education &amp; Research Experience</h1>
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="logo-box"><img src="assets/education/mount-sinai.png" alt="Mount Sinai Hospital logo"></div>
+      <div class="timeline-copy">
+        <h3>Associate Scientist · Icahn School of Medicine at Mount Sinai</h3>
+        <div class="timeline-meta">Sep 2026–Present · New York, USA</div>
+        <p class="timeline-detail"><strong>Collaborating PI:</strong> Prof. Yizhou Dong · Immunology &amp; Immunotherapy / PrIISM</p>
+        <p class="timeline-detail">Lipid nanoparticles, mRNA therapeutics, oligonucleotides, oral delivery, and drug delivery.</p>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <div class="logo-box"><img src="assets/education/mount-sinai.png" alt="Mount Sinai Hospital logo"></div>
+      <div class="timeline-copy">
+        <h3>Postdoctoral Fellow · Icahn School of Medicine at Mount Sinai</h3>
+        <div class="timeline-meta">Sep 2023–Sep 2026 · New York, USA</div>
+        <p class="timeline-detail"><strong>Collaborating PI:</strong> Prof. Yizhou Dong · Immunology &amp; Immunotherapy / PrIISM</p>
+        <p class="timeline-detail">Lipid nanoparticles, mRNA therapeutics, oligonucleotides, oral delivery, and drug delivery.</p>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <div class="logo-box"><img src="assets/education/sjtu.png" alt="Shanghai Jiao Tong University logo"></div>
+      <div class="timeline-copy">
+        <h3>Ph.D. in Biomedical Engineering · Shanghai Jiao Tong University</h3>
+        <div class="timeline-meta">Sep 2018–Jun 2023 · Shanghai, China</div>
+        <p class="timeline-detail"><strong>Mentor:</strong> Prof. Shiyi Zhang · School of Biomedical Engineering / National Facility for Translational Medicine</p>
+        <p class="timeline-detail">Toxicology and pharmacology of chemotherapies, biomaterials, gastroenterology, and translational medicine.</p>
+        <div class="timeline-honors">Outstanding Graduate · Outstanding Thesis</div>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <div class="logo-box"><img src="assets/education/dlut.png" alt="Dalian University of Technology logo"></div>
+      <div class="timeline-copy">
+        <h3>B.Eng. in Chemical Engineering · Dalian University of Technology</h3>
+        <div class="timeline-meta">Sep 2014–Jun 2018 · Dalian, China</div>
+        <p class="timeline-detail"><strong>Mentor:</strong> Prof. Weihong Qiao · School of Chemical Engineering</p>
+        <p class="timeline-detail">Organic chemistry, analytical chemistry, surfactants, fine chemicals, and tissue engineering.</p>
+        <div class="timeline-honors">Outstanding Graduate · Outstanding Thesis</div>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section id="publications" class="site-section">
@@ -362,19 +440,20 @@ co-author publications are listed separately.</p><h2 class="section-title">First
 <section id="services" class="site-section">
   <h1 class="section-heading">Academic & Industrial Services</h1>
 
-  <div class="service-card">
+  <div class="service-card reviewer-card">
     <h3>Independent Reviewer for Journals</h3>
-    <div class="journal-list">
-      <strong><em>Regenerative Biomaterials</em></strong> (Oxford University Press);
-      <strong><em>Angewandte Chemie</em></strong> (Wiley);
-      <strong><em>ACS Applied Biomaterials</em></strong> (ACS Publications);
-      <strong><em>Chemical Research in Toxicology</em></strong> (ACS Publications);
-      <strong><em>Chemical Engineering Journal</em></strong> (Elsevier);
-      <strong><em>Environmental Pollution</em></strong> (Elsevier);
-      <strong><em>Advanced Materials Technologies</em></strong> (Wiley);
-      <strong><em>Bioengineering & Translational Medicine</em></strong> (Wiley);
-      <strong><em>Advanced Science</em></strong> (Wiley);
-      <strong><em>International Immunopharmacology</em></strong> (Elsevier).
+    <p class="reviewer-intro">Peer-review service across biomaterials, drug delivery, toxicology, chemical engineering, and translational medicine.</p>
+    <div class="reviewer-grid">
+      <div class="reviewer-item"><span class="reviewer-num">1</span><div><strong><em>Regenerative Biomaterials</em></strong><span>Oxford University Press</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">2</span><div><strong><em>Angewandte Chemie</em></strong><span>Wiley</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">3</span><div><strong><em>ACS Applied Biomaterials</em></strong><span>ACS Publications</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">4</span><div><strong><em>Chemical Research in Toxicology</em></strong><span>ACS Publications</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">5</span><div><strong><em>Chemical Engineering Journal</em></strong><span>Elsevier</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">6</span><div><strong><em>Environmental Pollution</em></strong><span>Elsevier</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">7</span><div><strong><em>Advanced Materials Technologies</em></strong><span>Wiley</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">8</span><div><strong><em>Bioengineering &amp; Translational Medicine</em></strong><span>Wiley</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">9</span><div><strong><em>Advanced Science</em></strong><span>Wiley</span></div></div>
+      <div class="reviewer-item"><span class="reviewer-num">10</span><div><strong><em>International Immunopharmacology</em></strong><span>Elsevier</span></div></div>
     </div>
   </div>
 

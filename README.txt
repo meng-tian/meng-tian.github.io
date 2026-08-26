@@ -1,14 +1,7 @@
-Integrated preview v2
-Sections:
-- Heading
-- Research
-- Publications
-- Awards & Honors
-- Academic & Industrial Services
-- Teaching & Mentoring
+Integrated preview containing:
+1. Heading
+2. Research
+3. Publications
 
-Notes:
-- No separate Research Interests section.
-- No standalone Patents section.
-- The caffeine slow-release patent is included within the PepsiCo service entry.
-- Major awards are shown directly; smaller awards are placed in a collapsible section.
+Open index.html locally to preview.
+All image assets are included under assets/.
