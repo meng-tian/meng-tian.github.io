@@ -33,20 +33,20 @@ a:hover{text-decoration:underline}
   backdrop-filter:blur(10px);
 }
 .nav-inner{
-  max-width:1080px;margin:auto;padding:13px 28px;
+  max-width:1380px;margin:auto;padding:13px 28px;
   display:flex;justify-content:space-between;align-items:center;gap:20px;
 }
 .nav-brand{font-weight:750;color:var(--ink)}
 .nav-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
-.site-section{max-width:1080px;margin:auto;padding:54px 28px 70px}
+.site-section{max-width:1380px;margin:auto;padding:54px 28px 70px}
 .site-section + .site-section{border-top:1px solid var(--line)}
-.section-heading{font-size:30px;margin:0 0 30px}
+.section-heading{font-size:34px;margin:0 0 30px}
 
 /* Heading */
 #heading{padding-top:72px;padding-bottom:62px}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:70px;align-items:center}
 #heading h1{
-  font-size:50px;line-height:1.08;letter-spacing:-1.2px;
+  font-size:56px;line-height:1.08;letter-spacing:-1.2px;
   margin:0 0 22px;font-weight:760;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap
 }
 .cn{font-size:.56em;font-weight:650;letter-spacing:.04em}
@@ -64,7 +64,7 @@ a:hover{text-decoration:underline}
 }
 
 /* Research */
-#research h1{font-size:30px;margin:0 0 30px}
+#research h1{font-size:34px;margin:0 0 30px}
 .domain-title{display:flex;align-items:center;gap:10px;margin:0 0 15px;font-size:18px;font-weight:750}
 .domain-title .num{
   width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
@@ -99,29 +99,29 @@ a:hover{text-decoration:underline}
 .future p{font-size:14px;line-height:1.65;color:#3e4a56;margin:8px 0 0}
 
 /* Publications */
-#publications h1{font-size:30px;margin:0 0 8px}
+#publications h1{font-size:34px;margin:0 0 8px}
 .intro{color:var(--muted);margin:0 0 28px}
 .section-title{font-size:20px;margin:36px 0 16px}
 .featured{
   border:1px solid var(--line);border-radius:14px;overflow:hidden;
   margin:0 0 20px;background:#fff
 }
-.featured-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:0}
-.copy{padding:24px 26px}
-.figure{
+.featured-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:0}
+.copy{padding:30px 32px}
+.figure{min-height:430px;
   background:#fbfcfe;border-left:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;padding:16px
 }
-.figure img{width:100%;max-height:360px;object-fit:contain;border-radius:8px}
-.authors{font-size:14px;color:#394552}
+.figure img{width:100%;max-height:520px;object-fit:contain;border-radius:8px}
+.authors{font-size:15px;color:#394552}
 .journal{font-style:italic;font-weight:700}
 .title{font-weight:700;font-size:17px;margin:6px 0}
 .status{
   display:inline-block;background:var(--status);border:1px solid #f0dfb5;
   border-radius:999px;padding:3px 9px;font-size:12px;margin-top:8px
 }
-.summary{font-size:14px;margin:15px 0 0;color:#35414d}
-.impact{font-size:13px;color:var(--muted);margin:10px 0 0}
+.summary{font-size:15px;margin:15px 0 0;color:#35414d}
+.impact{font-size:14px;color:var(--muted);margin:10px 0 0}
 .doi{display:inline-block;margin-left:6px;font-size:13px}
 .coauthor-list{border-top:1px solid var(--line)}
 .coitem{padding:16px 4px;border-bottom:1px solid var(--line)}
@@ -139,9 +139,9 @@ footer{
   border-top:1px solid var(--line);
   text-align:center;color:var(--muted);font-size:13px;padding:24px
 }
-@media(max-width:800px){
+@media(max-width:980px){
   .featured-grid{grid-template-columns:1fr}
-  .figure{border-left:0;border-top:1px solid var(--line)}
+  .figure{min-height:430px;border-left:0;border-top:1px solid var(--line)}
   .figure img{max-height:none}
 }
 @media(max-width:760px){
@@ -405,6 +405,9 @@ co-author publications are listed separately.</p><h2 class="section-title">First
       <h3>Siemens Healthineers</h3>
       <div class="meta-line">Shanghai, China · 2022–2023</div>
       <p>Collaborated with Siemens Healthineers application and research teams to advance the scientific use of Siemens DSA, resulting in one publication and one patent.</p>
+      <p><strong>Patent:</strong> <em>Use of Bismuth-Polymer Complex in Digestive Tract Visualization</em>.</p>
+      <p class="people">Inventors: Meng Tian; Zhen Liu; Xinran Xie; Shiyi Zhang; Jie Luo.</p>
+      <p class="people">WIPO (PCT): WO2024022447A1.</p>
     </div>
   </div>
 </section>
