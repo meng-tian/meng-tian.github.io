@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Academic website of Meng Tian, Ph.D.">
+<title>Meng Tian, Ph.D.</title>
+<style>
+:root{
+  --ink:#17212b;
+  --muted:#637080;
+  --accent:#245a86;
+  --blue2:#2e6bc5;
+  --line:#e4e8ed;
+  --soft:#f6f8fb;
+  --status:#fff7e7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#fff;
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;
+  line-height:1.55;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.site-nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(10px);
+}
+.nav-inner{
+  max-width:1380px;margin:auto;padding:13px 28px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.nav-brand{font-weight:750;color:var(--ink)}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+.site-section{max-width:1380px;margin:auto;padding:54px 28px 70px}
+.site-section + .site-section{border-top:1px solid var(--line)}
+.section-heading{font-size:34px;margin:0 0 30px}
+
+/* Heading */
+#heading{padding-top:72px;padding-bottom:62px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:70px;align-items:center}
+#heading h1{
+  font-size:56px;line-height:1.08;letter-spacing:-1.2px;
+  margin:0 0 22px;font-weight:760;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap
+}
+.cn{font-size:.56em;font-weight:650;letter-spacing:.04em}
+.role{font-size:20px;font-weight:680;margin:0 0 6px}
+.affiliation{font-size:16px;color:var(--muted);margin:0 0 20px}
+.seeking{
+  display:inline-block;padding:8px 13px;margin:0 0 24px;
+  border:1px solid var(--line);border-radius:999px;background:var(--soft);
+  font-size:14px;font-weight:650
+}
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:15px}
+.photo{
+  width:230px;height:230px;border-radius:50%;object-fit:cover;display:block;
+  border:1px solid var(--line);box-shadow:0 10px 30px rgba(31,45,61,.08)
+}
+
+/* Research */
+#research h1{font-size:34px;margin:0 0 30px}
+.domain-title{display:flex;align-items:center;gap:10px;margin:0 0 15px;font-size:18px;font-weight:750}
+.domain-title .num{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:#eef5ff;color:var(--blue2);font-size:14px
+}
+.icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
+.icon-card{
+  min-height:170px;border:1px solid var(--line);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:18px;text-align:center;background:#fff
+}
+.icon-disc{
+  width:78px;height:78px;border-radius:50%;background:#f4f7fb;
+  display:grid;place-items:center;margin-bottom:12px;overflow:hidden
+}
+.icon-disc img{width:58px;height:58px;object-fit:contain;mix-blend-mode:multiply}
+.icon-card strong{font-size:15px;line-height:1.35}
+.future{
+  border:1px solid #dce7f5;
+  background:linear-gradient(135deg,#f8fbff,#f1f6fd);
+  border-radius:14px;padding:22px 24px 24px
+}
+.future-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.future-item{padding:2px 28px 0 4px}
+.future-item + .future-item{border-left:1px solid #d9e2ec;padding-left:30px}
+.kicker{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.badge{
+  flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blue2);color:white;font-size:12px;font-weight:750
+}
+.future h3{font-size:16px;margin:2px 0 0}
+.future p{font-size:14px;line-height:1.65;color:#3e4a56;margin:8px 0 0}
+
+/* Publications */
+#publications h1{font-size:34px;margin:0 0 8px}
+.intro{color:var(--muted);margin:0 0 28px}
+.section-title{font-size:20px;margin:36px 0 16px}
+.featured{
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  margin:0 0 20px;background:#fff
+}
+.featured-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:0}
+.copy{padding:30px 32px}
+.figure{min-height:430px;
+  background:#fbfcfe;border-left:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;padding:16px
+}
+.figure img{width:100%;max-height:520px;object-fit:contain;border-radius:8px}
+.authors{font-size:15px;color:#394552}
+.journal{font-style:italic;font-weight:700}
+.title{font-weight:700;font-size:17px;margin:6px 0}
+.status{
+  display:inline-block;background:var(--status);border:1px solid #f0dfb5;
+  border-radius:999px;padding:3px 9px;font-size:12px;margin-top:8px
+}
+.summary{font-size:15px;margin:15px 0 0;color:#35414d}
+.impact{font-size:14px;color:var(--muted);margin:10px 0 0}
+.doi{display:inline-block;margin-left:6px;font-size:13px}
+.coauthor-list{border-top:1px solid var(--line)}
+.coitem{padding:16px 4px;border-bottom:1px solid var(--line)}
+.coitem .ctitle{font-weight:650}
+.coitem .meta{font-size:14px;color:#394552;margin-top:3px}
+.coitem .doi{margin-top:4px}
+.note{font-size:12px;color:var(--muted);margin-top:16px}
+.book-section{margin:42px 0;padding-top:8px}
+.book-section h2{margin-bottom:16px}
+.book-entry{
+  border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+  background:#fff;line-height:1.6
+}
+footer{
+  border-top:1px solid var(--line);
+  text-align:center;color:var(--muted);font-size:13px;padding:24px
+}
+@media(max-width:980px){
+  .featured-grid{grid-template-columns:1fr}
+  .figure{min-height:430px;border-left:0;border-top:1px solid var(--line)}
+  .figure img{max-height:none}
+}
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr;gap:34px}
+  #heading h1{font-size:40px;gap:10px}
+  .photo{width:190px;height:190px}
+}
+@media(max-width:720px){
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+  .future-grid{grid-template-columns:1fr}
+  .future-item{padding-right:4px}
+  .future-item + .future-item{
+    border-left:0;border-top:1px solid #d9e2ec;padding:22px 4px 0;margin-top:22px
+  }
+}
+@media(max-width:560px){
+  .nav-links{display:none}
+  .site-section{padding-left:18px;padding-right:18px}
+  .icon-grid{grid-template-columns:1fr}
+  .copy{padding:20px}
+}
+
+/* Awards / Services / Teaching */
+.content-card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:22px 24px;
+  margin:0 0 18px;
+}
+.content-card h3{margin:0 0 8px;font-size:18px}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 8px}
+.award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.award-card{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:18px 20px;
+  background:#fff;
+}
+.award-card strong{display:block;font-size:16px;margin-bottom:5px}
+.award-card .meta{font-size:13px;color:var(--muted)}
+details.more-awards{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:0 18px;
+  background:#fafbfd;
+}
+details.more-awards summary{
+  cursor:pointer;
+  padding:16px 0;
+  font-weight:700;
+  color:var(--accent);
+}
+details.more-awards ul{margin:0 0 18px 20px;padding:0}
+details.more-awards li{margin:8px 0}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.service-card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px 22px;
+  background:#fff;
+}
+.service-card h3{margin:0 0 6px;font-size:18px}
+.service-card p{margin:8px 0;font-size:14px;color:#35414d}
+.service-card ul{margin:10px 0 0 20px;padding:0}
+.service-card li{margin:6px 0;font-size:14px}
+.journal-list{font-size:14px;line-height:1.75;color:#35414d}
+.teach-block{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px 22px;
+  margin:0 0 18px;
+  background:#fff;
+}
+.teach-block h3{margin:0 0 6px;font-size:18px}
+.teach-block p{font-size:14px;color:#35414d;margin:8px 0}
+.people{font-size:13px;color:var(--muted);line-height:1.65}
+@media(max-width:760px){
+  .award-grid,.service-grid{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#heading">Meng Tian</a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#services">Services</a>
+      <a href="#teaching">Teaching</a>
+    </div>
+  </div>
+</nav>
+
+<section id="heading" class="site-section">
+<section class="hero">
+<div>
+<h1>Meng Tian, Ph.D. <span class="cn">田萌</span></h1>
+<p class="role">Associate Scientist · Postdoctoral Fellow</p>
+<p class="affiliation">Icahn School of Medicine at Mount Sinai, New York</p>
+<div class="seeking">Seeking independent faculty / PI opportunities</div>
+
+<div class="contact">
+<a href="mailto:tian.meng@mssm.edu">tian.meng@mssm.edu</a>
+<a href="mailto:tianmeng1996@hotmail.com">tianmeng1996@hotmail.com</a>
+<a href="https://orcid.org/0000-0001-7719-9896" target="_blank" rel="noopener">ORCID</a>
+<a href="https://www.researchgate.net/profile/Meng-Tian-20?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
+</div>
+</div>
+
+<img class="photo" src="assets/heading/profile.jpg" alt="Meng Tian">
+</section>
+
+</section>
+
+<section id="research" class="site-section">
+<h1>Research</h1>
+
+<div class="domain-title"><span class="num">1</span><span>Research Experience</span></div>
+<div class="icon-grid">
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/mrna.jpg" alt=""></div><strong>mRNA<br>Therapeutics</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/oligo.png" alt=""></div><strong>Oligonucleotide<br>Therapeutics</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/drug-delivery.png" alt=""></div><strong>Drug<br>Delivery</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/drug-toxicity.png" alt=""></div><strong>Drug<br>Toxicity</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/pharmaceutics.png" alt=""></div><strong>Pharmaceutics</strong></div>
+  <div class="icon-card"><div class="icon-disc"><img src="assets/research/biomaterials.jpg" alt=""></div><strong>Biomaterials</strong></div>
+</div>
+
+<div class="domain-title"><span class="num">2</span><span>Future Research Directions</span></div>
+<section class="future">
+  <div class="future-grid">
+    <article class="future-item">
+      <div class="kicker"><span class="badge">1</span><h3>Translational Pharmaceutical Formulation Development</h3></div>
+      <p>Develop clinically translatable oral, injectable, and transdermal formulations, with emphasis on macromolecule absorption, IV-to-SC conversion, physiological-barrier delivery, and innovative formulations with strong translational potential.</p>
+    </article>
+    <article class="future-item">
+      <div class="kicker"><span class="badge">2</span><h3>Therapeutic Discovery and Development</h3></div>
+      <p>Advance small-molecule, oligonucleotide, mRNA, and other biologic therapeutics by identifying disease-relevant targets and mechanisms and evaluating therapeutic efficacy across major disease areas and drug-induced toxicities.</p>
+    </article>
+  </div>
+</section>
+</section>
+
+<section id="publications" class="site-section">
+<h1>Publications</h1><p class="intro">Selected first-author and co-first-author publications are highlighted with project figures and concise summaries. Additional 
+
+
+co-author publications are listed separately.</p><h2 class="section-title">First-author & Co-first-author Publications</h2><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors"><strong>Tian M</strong>, Wang L, Liu Z, Cao D, Yu C, Bennett JL, Bliss-Moreau E, Wang C, Kang DD, Xue Y, Zhong Y, Wang S, Li H, Hou X, Deng B, Dong Y</div><div><span class="journal">Nature Nanotechnology</span></div><span class="status">Second-round revision submitted</span><p class="summary">We developed HX1 LNPs for CNS RNA delivery by screening approved CNS-related drugs using PK and safety profiles. HX1 enabled brain delivery of mRNA and Cas9 mRNA/sgRNA for gene expression and gene editing in mice, and was further validated in non-human primates using luciferase mRNA reporter and basic biosafety studies.</p><p class="impact">This project won Phase 2 and Phase 3a of the NIH TARGETED Genome Editor Delivery Challenge and is now one of four teams in the Phase 3b final round.</p></div><div class="figure"><img src="assets/publications/publication-1.png" alt="Project figure for publication 1"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors"><strong><strong>Tian M</strong>*</strong>, Liu Z*, Bennett JL, Bliss-Moreau E, Kang DD, Cao D, Yu C, Xue Y, Zhong Y, Wang S, Li H, Hou X, Dong Y</div><div><span class="journal">Nature Biomedical Engineering</span></div><span class="status">First-round revision submitted</span><p class="summary">We developed NX8, a small-molecule oral permeation enhancer derived from OTC naproxen. NX8 improved oral delivery of diverse biologics, including ASOs, peptides, insulin, and heparin, achieving approximately 5–10% oral bioavailability in tested models. The platform was further validated in non-human primates using oral semaglutide tablets, with no overt treatment-associated toxicity under the tested conditions.</p><p class="impact">NX8 has received external interest; further translation and development are ongoing.</p></div><div class="figure"><img src="assets/publications/publication-2.png" alt="Project figure for publication 2"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors">Liu Z*, <strong><strong>Tian M</strong>*</strong>, Yu C*, Cao D, Bennett JL, Bliss-Moreau E, Hou X, Li H, Wang S, Xue Y, Zhong Y, Markovic T, Nestler JE, Dong Y</div><div><span class="journal">Science Translational Medicine</span></div><span class="status">First-round revision submitted</span><p class="summary">Building on the same PK-guided CNS ligand-screening platform, we identified sertraline as a highly developable ligand for antibody transport. Sertraline transporter-mediated conjugates increased antibody exposure in the brain, enhanced IgG delivery in mice and non-human primates, and enabled therapeutic antibody delivery in glioblastoma and Parkinson’s disease models.</p></div><div class="figure"><img src="assets/publications/publication-3.png" alt="Project figure for publication 3"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors">Cao D*, <strong><strong>Tian M</strong>*</strong>, Yu C*, Xue Y*, Liu Z, Zhong Y, Hou X, Li H, Zheng YY, Wang S, Tankelevich M, Naik S, Mehandru S, Dong Y</div><div><span class="journal">Nature Communications</span> (2026)</div><span class="status">In principle accepted</span><p class="summary">We developed a glucocorticoid-derived LNP platform for localized rectal delivery of mRNA therapeutics in inflammatory bowel disease. Rectal administration preferentially delivered mRNA to inflamed colonic tissue with limited systemic exposure, showed efficacy in acute and chronic colitis models, and was further evaluated in ex vivo colonic biopsies from patients with IBD.</p></div><div class="figure"><img src="assets/publications/publication-4.png" alt="Project figure for publication 4"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors">You M*, <strong><strong>Tian M</strong>*</strong>, Song Z, Liu Z, Yang B, Zhang S*</div><div class="title">Selection of GalNAc-Conjugated siKeap1 as Disease-Specific Delivery System for Chemotherapy-Induced Liver Injury and Chronic Liver Disease</div><div><span class="journal">Nano Letters</span> (2024)</div><a class="doi" href="https://doi.org/10.1021/acs.nanolett.3c03609" target="_blank" rel="noopener">DOI</a><p class="summary">We compared LNP and GalNAc platforms for siRNA-mediated Keap1 silencing. GalNAc-siKeap1 provided hepatocyte-selective activity, reduced chemotherapy-induced liver injury, and preserved anticancer efficacy, highlighting the value of disease-specific delivery.</p></div><div class="figure"><img src="assets/publications/publication-5.png" alt="Project figure for publication 5"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors"><strong><strong>Tian M</strong>*</strong>, Mu X*, Fan D, Liu Z, Liu Q, Yue K, Song Z, Luo J*, Zhang S*</div><div class="title">A Transformable Mucoadhesive Microgel Network for Noninvasive Multimodal Imaging And Radioprotection of a Large Area of the Gastrointestinal Tract</div><div><span class="journal">Advanced Materials</span> (2023)</div><a class="doi" href="https://doi.org/10.1002/adma.202303436" target="_blank" rel="noopener">DOI</a><p class="summary">We developed Bi-GLUE, a transformable mucoadhesive microgel network combining high flowability with strong mucosal adhesion. The platform enabled large-area gastrointestinal X-ray and MRI imaging in murine and porcine models and reduced gastrointestinal radiation injury.</p><p class="impact">The fluidic large-area GI coating concept was subsequently extended by other groups to oral biologic delivery.</p></div><div class="figure"><img src="assets/publications/publication-6.jpeg" alt="Project figure for publication 6"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors"><strong>Tian M</strong>, Fan D, Liu Z, Mu X, Tao Q, Yu C*, Zhang S*</div><div class="title">Oral Supramolecular Adsorbent for Preventing Chemo-Induced Gastrointestinal Mucositis and Microbial Dysbiosis and for Enhancing Chemoimmunotherapy</div><div><span class="journal">Advanced Materials</span> (2022)</div><a class="doi" href="https://doi.org/10.1002/adma.202205299" target="_blank" rel="noopener">DOI</a><p class="summary">We developed SPORA-SN9, an orally administered supramolecular adsorbent that selectively captures residual chemotherapeutic drugs in the gastrointestinal tract. It reduced mucositis and microbiota disruption while preserving systemic anticancer treatment and improving chemoimmunotherapy efficacy.</p><p class="impact">This localized GI drug-scavenging concept was subsequently adopted and discussed by other groups as a broader barrier-guided detoxification strategy.</p></div><div class="figure"><img src="assets/publications/publication-7.jpeg" alt="Project figure for publication 7"></div></div></article><article class="featured"><div class="featured-grid"><div class="copy"><div class="authors"><strong><strong>Tian M</strong>*</strong>, Xing R*, Guan J, Yang B, Zhao X, Yang J, Zhan C*, Zhang S*</div><div class="title">A Nano Antidote Alleviates Glioblastoma Chemotoxicity without Efficacy Compromise</div><div><span class="journal">Nano Letters</span> (2021)</div><a class="doi" href="https://doi.org/10.1021/acs.nanolett.1c01201" target="_blank" rel="noopener">DOI</a><p class="summary">We developed a nanoantidote based on an inverse-delivery concept: instead of overcoming the blood–brain barrier, we leveraged it to confine the antidote to peripheral tissues. This reduced systemic temozolomide toxicity while preserving drug exposure and antitumor efficacy in the brain.</p><p class="impact">Related nano-antidote strategies were subsequently reported by other groups, supporting the broader applicability of barrier-guided detoxification.</p></div><div class="figure"><img src="assets/publications/publication-8.jpeg" alt="Project figure for publication 8"></div></div></article>
+<section class="book-section">
+  <h2>Book Chapter</h2>
+  <div class="book-entry">
+    <strong>CNS Delivery of mRNA Therapeutics.</strong><br>
+    Tian M, Dong Y (submitted). In: <em class="journal">Central Nervous System Delivery of Biological Therapeutics</em>. Invited Book Chapter.
+  </div>
+</section>
+
+<h2 class="section-title">Additional Co-author Publications</h2><div class="coauthor-list"><div class="coitem"><div class="ctitle">Overcoming the Blood-Brain Barrier Using Central Nervous System-Accessing Lipid Nanoparticles for Enhanced mRNA Therapeutics</div><div class="meta">Wang S, Zhong Y, Wang C, <strong>Tian M</strong>, Bennett JL, Bliss-Moreau E, Xue Y, Yu C, Hou X, Zheng YY, Li H, Liu Z, Cao D, Kang DD, Deng B, Dong Y · <em class="journal">Proceedings of the National Academy of Sciences (PNAS)</em> (2026)</div><a class="doi" href="https://doi.org/10.1073/pnas.2538147123" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">JAK Inhibitors Alleviate EGFR-inhibitor-induced Diarrhea by Protecting Intestinal Stem Cells from Adaptive-immune-exacerbated Injury</div><div class="meta">Cheng Y, Xu C, Lv D, <strong>Tian M</strong>, Wang H, Yang B, Chen L, You Q*, Zhang S* · <em class="journal">Nature Communications</em> (2026)</div><a class="doi" href="https://doi.org/10.1038/s41467-026-71739-8" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">mRNA-Based MRI Contrast Agent for Precise Diagnosis of Glioma and Pseudoprogression</div><div class="meta">Li H*, Wang L*, Zhong Y, Guo K, Xue Y, Wang C, Wang S, Hou X, Chen DS, Liu Z, Cao D, <strong>Tian M</strong>, Kang DD, Mu X, Deng B, McComb DW, Taouli B, Brown BD, Dong Y · <em class="journal">Cell Biomaterials</em> (2026)</div><a class="doi" href="https://doi.org/10.1016/j.celbio.2025.100342" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Aminophosphonate-Derived Lipid Nanoparticles Enable Circular RNA Delivery for Functional Recovery after Spinal Cord Injury</div><div class="meta">Li H*, Zhang Y*, Zhong Y, Guo K, Xue Y, Wang C, Wang S, Hou X, Chen DS, Liu Z, Cao D, <strong>Tian M</strong>, Yu C, Kang DD, Hou X, Deng B, McComb DW, Thatikonda SK, Yen C-W*, Dong Y* · <em class="journal">Materials Today</em> (2025)</div><a class="doi" href="https://doi.org/10.1016/j.mattod.2025.10.005" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Lipid Nanoparticles for mRNA Delivery in Brain via Systemic Administration</div><div class="meta">Cao D*, Hou X*, Wang C*, Wang S*, Liu Z, <strong>Tian M</strong>, Guo K, Li H, Kang DD, Zhong Y, Xue Y, Yu C, Deng B, Dong Y · <em class="journal">Science Advances</em> (2025)</div><a class="doi" href="https://doi.org/10.1126/sciadv.adw0730" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Lipid Nanoparticles Enhance mRNA Delivery to the Central Nervous System Upon Intrathecal Injection</div><div class="meta">Xue Y*, Wang C*, Li H, Du S, Zhong Y, Zhang Y, Wang S, Guo K, Hou X, Kang DD, Liu Z, <strong>Tian M</strong>, Cao D, Deng B, McComb DW, Markovic T, Pan J, Borna M, Nestler EJ*, Peng PC*, Dong Y* · <em class="journal">Advanced Materials</em> (2025)</div><a class="doi" href="https://doi.org/10.1002/adma.202417097" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Unlock the Sustained Therapeutic Efficacy of mRNA</div><div class="meta">Cao D, <strong>Tian M</strong>, Liu Z, Guo K, Peng J, Ravichandra A, Ferrell C, Dong Y · <em class="journal">Journal of Controlled Release</em> (2025)</div><a class="doi" href="https://doi.org/10.1016/j.jconrel.2025.113837" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Furan-Derived Lipid Nanoparticles for Transporting mRNA to the Central Nervous System</div><div class="meta">Liu Z, Zhang Y, Li H, Guo K, <strong>Tian M</strong>, Cao D, Kang DD, Xue Y, Hou X, Wang C, Wang S, Zhong Y, Yu C, Deng B, McComb DW, Dong Y* · <em class="journal">Journal of the American Chemical Society</em> (2025)</div><a class="doi" href="https://doi.org/10.1021/jacs.4c16326" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Enhancing Antitumor Immunity through Chemotherapeutic-derived Lipid Nanoparticle-induced Immunogenic Cell Death and CD40L/Flt3L mRNA-mediated Dendritic Cell Activation</div><div class="meta">Hou X, Wang C, Zhong Y, Wang L, Kang DD, Lubitz G, Xue Y, Liu Z, Wang S, Li H, <strong>Tian M</strong>, Cao D, Guo K, Deng B, McComb DW, Marron TU, Brown BD, Merad M, Brody JD*, Dong Y* · <em class="journal">Journal of Controlled Release</em> (2025)</div><a class="doi" href="https://doi.org/10.1016/j.jconrel.2025.113684" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">LNP-RNA-Mediated Antigen Presentation Leverages SARS-CoV-2-Specific Immunity for Cancer Treatment</div><div class="meta">Xue Y*, Hou X*, Zhong Y*, Zhang Y*, Du S, Kang DD, Wang L, Wang C, Li H, Wang S, Liu Z, <strong>Tian M</strong>, Guo K, Cao D, Deng B, McComb DW, Purisic E, Dai J, Hamon P, Brown BD, Tsankova NM, Merad M, Irvine DJ, Weiss R, Dong Y* · <em class="journal">Nature Communications</em> (2025)</div><a class="doi" href="https://doi.org/10.1038/s41467-025-57149-2" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Blood-Brain-Barrier-Crossing Lipid Nanoparticles for mRNA Delivery to the Central Nervous System</div><div class="meta">Wang C*, Xue Y*, Markovic T*, Li H, Wang S, Zhong Y, Du S, Zhang Y, Hou X, Yu Y, Liu Z, <strong>Tian M</strong>, Kang DD, Wang L, Guo K, Cao D, Yan J, Deng B, McComb DW, Parsons RE, Minier-Toribio AM, Holt LM, Pan J, Hashemi A, Kopell BH, Charney AW, Nestler EJ*, Peng PC*, Dong Y* · <em class="journal">Nature Materials</em> (2025)</div><a class="doi" href="https://doi.org/10.1038/s41563-024-02114-5" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Blood-Brain Barrier Crossing Conjugates (BCC) for the Transport of Biomacromolecules into the Central Nervous System via γ-Secretase Mediated Transcytosis</div><div class="meta">Wang C*, Wang S*, Xue Y, Zhong Y, Li H, Hou X, Kang DD, Liu Z, <strong>Tian M</strong>, Wang L, Cao D, Yu Y, Liu J, Cheng X, Markovic T, Hashemi A, Kopell BH, Charney AW, Nestler EJ*, Dong Y* · <em class="journal">Nature Biotechnology</em> (2024)</div><a class="doi" href="https://doi.org/10.1038/s41587-024-02487-7" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Topical JAK Inhibition Ameliorates EGFR Inhibitor-induced Rash in Rodents and Humans</div><div class="meta">You Q*, Chen L*, Li S, Liu M, <strong>Tian M</strong>, Cheng Y, Xia L, Li W, Yao Y, Li Y, Zhou Y, Ma Y, Lv D, Zhao L, Wang H, Wu Z, Hu J, Ju J, Jia C, Xu N*, Luo J*, Zhang S* · <em class="journal">Science Translational Medicine</em> (2024)</div><a class="doi" href="https://doi.org/10.1126/scitranslmed.abq7074" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Accelerating Diabetic Wound Healing by ROS-scavenging Lipid Nanoparticle-mRNA Formulation</div><div class="meta">Wang S*, Zhang Y*, Zhong Y, Xue Y, Liu Z, Wang C, Kang DD, Li H, Hou X, <strong>Tian M</strong>, Cao D, Wang L, Guo K, Deng B, McComb DW, Merad M, Brown BD, Dong Y · <em class="journal">Proceedings of the National Academy of Sciences (PNAS)</em> (2024)</div><a class="doi" href="https://doi.org/10.1073/pnas.2322935121" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">A Counterion-Free Strategy for Chronic Metabolic Acidosis Based on an Orally Administered Gut-Restricted Inorganic Adsorbent</div><div class="meta">Liu Z, Xiang L, <strong>Tian M</strong>, Wang H, Zhao X, Liu K, Yu J, Liu T, Liu S, Mu X, Yang B, Zhang S, Luo J · <em class="journal">Advanced Materials</em> (2023)</div><a class="doi" href="https://doi.org/10.1002/adma.202305992" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Orally Administered Saccharide-Sequestering Nanocomplex to Manage Carbohydrate Metabolism Disorders</div><div class="meta">Zhao X, Zhang H, Li J, <strong>Tian M</strong>, Yang J, Sun S, Hu Q, Yang L, Zhang S · <em class="journal">Science Advances</em> (2021)</div><a class="doi" href="https://doi.org/10.1126/sciadv.abf7311" target="_blank" rel="noopener">DOI</a></div><div class="coitem"><div class="ctitle">Mussel-inspired Degradable Antibacterial Polydopamine/Silica Nanoparticle for Rapid Hemostasis</div><div class="meta">Liu C, Yao W, <strong>Tian M</strong>, Wei J, Song Q, Qiao W · <em class="journal">Biomaterials</em> (2018)</div><a class="doi" href="https://doi.org/10.1016/j.biomaterials.2018.06.037" target="_blank" rel="noopener">DOI</a></div></div><p class="note">* denotes co-first or co-corresponding authorship as provided in the source documents.</p>
+</section>
+
+
+<section id="awards" class="site-section">
+  <h1 class="section-heading">Awards & Honors</h1>
+
+  <div class="award-grid">
+    <div class="award-card">
+      <strong>NIH TARGETED Genome Editor Delivery Challenge — Phase IIIa Winner</strong>
+      <div class="meta">2025 · National Institutes of Health (USA) · $90,000 Prize</div>
+    </div>
+
+    <div class="award-card">
+      <strong>NIH TARGETED Genome Editor Delivery Challenge — Phase II Winner</strong>
+      <div class="meta">2025 · National Institutes of Health (USA) · $250,000 Prize</div>
+    </div>
+
+    <div class="award-card">
+      <strong>Outstanding Doctoral Thesis</strong>
+      <div class="meta">2024 · Shanghai Jiao Tong University · Nomination Prize · ¥20,000</div>
+    </div>
+
+    <div class="award-card">
+      <strong>Outstanding Graduate</strong>
+      <div class="meta">2023 · Shanghai Jiao Tong University</div>
+    </div>
+
+    <div class="award-card">
+      <strong>Outstanding Undergraduate Thesis</strong>
+      <div class="meta">2018 · Dalian University of Technology</div>
+    </div>
+
+    <div class="award-card">
+      <strong>Outstanding Undergraduate</strong>
+      <div class="meta">2018 · Dalian University of Technology · ¥1,000</div>
+    </div>
+  </div>
+
+  <details class="more-awards">
+    <summary>Additional awards and scholarships</summary>
+    <ul>
+      <li>The 10th Adamas Academic Paper Award, 2022 — Shanghai Titan Scientific Co., Ltd. · ¥10,000</li>
+      <li>Outstanding Research Prize, 2022 — National Facility for Translational Medicines · ¥8,000</li>
+      <li>Postgraduate Innovation and Entrepreneurship Competition, 2022 — Shanghai Top 1; National Silver Award</li>
+      <li>Merit-Based Scholarship, 2021 — Shanghai Jiao Tong University · ¥2,000</li>
+      <li>Graduate Fellowship, 2018–2023 — Shanghai Jiao Tong University · ¥260,000</li>
+      <li>Excellent Undergraduate Scholarship–Summer Camp, 2018 — Shanghai Jiao Tong University · ¥3,000</li>
+      <li>Excellent Undergraduate Scholarship–Summer Camp, 2018 — Tsinghua University · ¥800</li>
+      <li>Merit-Based Award for Undergraduate–Summer Camp, 2018 — University of Science and Technology of China</li>
+      <li>National Undergraduate Innovation Project, 2018 — Chinese Ministry of Education · ¥10,000</li>
+      <li>Academic Excellence Scholarships, 2014–2018 — Dalian University of Technology · ¥3,500</li>
+    </ul>
+  </details>
+</section>
+
+<section id="services" class="site-section">
+  <h1 class="section-heading">Academic & Industrial Services</h1>
+
+  <div class="service-card">
+    <h3>Independent Reviewer for Journals</h3>
+    <div class="journal-list">
+      <strong><em>Regenerative Biomaterials</em></strong> (Oxford University Press);
+      <strong><em>Angewandte Chemie</em></strong> (Wiley);
+      <strong><em>ACS Applied Biomaterials</em></strong> (ACS Publications);
+      <strong><em>Chemical Research in Toxicology</em></strong> (ACS Publications);
+      <strong><em>Chemical Engineering Journal</em></strong> (Elsevier);
+      <strong><em>Environmental Pollution</em></strong> (Elsevier);
+      <strong><em>Advanced Materials Technologies</em></strong> (Wiley);
+      <strong><em>Bioengineering & Translational Medicine</em></strong> (Wiley);
+      <strong><em>Advanced Science</em></strong> (Wiley);
+      <strong><em>International Immunopharmacology</em></strong> (Elsevier).
+    </div>
+  </div>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>OnQuality Pharmaceuticals</h3>
+      <div class="meta-line">China & USA · 2019–2023</div>
+      <p>Contributed to the development of small-molecule drugs and biomaterials aimed at mitigating toxic side effects associated with chemotherapy and radiotherapy.</p>
+      <p>The work contributed to FDA IND-related development and clinical studies, including:</p>
+      <ul>
+        <li>NCT04088318 — OQL011 for VEGFR inhibitor-associated hand-foot skin reaction (NOVA-II)</li>
+        <li>NCT04592731 — Acetylated natural nucleotides for hand-foot syndrome</li>
+        <li>NCT05120362 — JAK inhibitor cream for EGFR-inhibitor-induced skin rash</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>PepsiCo, Inc.</h3>
+      <div class="meta-line">USA · 2020–2023 · Project budget: approximately $100,000 annually</div>
+      <p>Key contributor to the development of controlled-release food additive systems for the beverage industry.</p>
+      <p>The project generated a caffeine slow-release patent family and the technology remains under further internal development at PepsiCo.</p>
+      <p><strong>Patent:</strong> <em>Compositions Providing Slow Release of Caffeine and Beverages Comprising the Same</em>.</p>
+      <p class="people">Inventors: Yu Wang; DaSom No; Yuan Fang; Nelson Trusler; Damian Browne; Xin Zhao; Meng Tian; Shiyi Zhang; George Meyer; Rohil Bhatnagar.</p>
+      <p class="people">WIPO (PCT): WO2022266441A1 · United States: US20220401449A1 · Canada: CA3223579A1 · Australia: AU2022294905A1 · China: CN115486508A.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Siemens Healthineers</h3>
+      <div class="meta-line">Shanghai, China · 2022–2023</div>
+      <p>Collaborated with Siemens Healthineers application and research teams to advance the scientific use of Siemens DSA, resulting in one publication and one patent.</p>
+      <p><strong>Patent:</strong> <em>Use of Bismuth-Polymer Complex in Digestive Tract Visualization</em>.</p>
+      <p class="people">Inventors: Meng Tian; Zhen Liu; Xinran Xie; Shiyi Zhang; Jie Luo.</p>
+      <p class="people">WIPO (PCT): WO2024022447A1.</p>
+    </div>
+  </div>
+</section>
+
+<section id="teaching" class="site-section">
+  <h1 class="section-heading">Teaching & Mentoring</h1>
+
+  <div class="teach-block">
+    <h3>Shanghai Jiao Tong University</h3>
+    <div class="meta-line">Ph.D. period</div>
+    <p>Supervised students and graduate research assistants in laboratory techniques, data analysis, and research project development. Assisted in coursework and practical training in Pharmacology and Modern Instrument Analysis.</p>
+    <p class="people"><strong>Selected mentees:</strong> Hu Qixin (now Ph.D. student at UCLA); Fan Dongyue (now Ph.D. student at Leiden University Medical Center); Song Zhiling (now Ph.D. student at RWTH Aachen University); Ma Yurui (now Ph.D. student at Imperial College London); Chen Yutong (now Ph.D. student at The University of Manchester).</p>
+  </div>
+
+  <div class="teach-block">
+    <h3>Icahn School of Medicine at Mount Sinai</h3>
+    <div class="meta-line">Postdoctoral period · 2023–present</div>
+    <p>Mentored and trained high-school students and high-school teachers in cell culture and formulation preparation. Also supported undergraduate, master’s, and early-stage Ph.D. trainees on projects involving cell culture, lipid nanoparticles, and drug-delivery systems.</p>
+    <p class="people"><strong>Selected mentees:</strong> Alexza Garcia (Park East High School); Lucia Marchese-Thomas (The Dalton School); Emilio Martinez (Atmosphere Academy Public School); Caroline Ferrell (Bronx High School of Science); Jonathan Peng (Belmont High School); Kaiyuan Guo (Master’s at ISMMS; now Ph.D. student at Rice University); Periklis Malakates (Ph.D. student at ISMMS); Alister Ng (undergraduate at Lewis & Clark College).</p>
+  </div>
+</section>
+
+<footer>© 2026 Meng Tian</footer>
+</body>
+</html>
